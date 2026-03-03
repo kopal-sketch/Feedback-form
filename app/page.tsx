@@ -247,7 +247,7 @@ export default function FeedbackPage() {
             <div className="bg-white/80 rounded-2xl p-4 border border-pop-mint/50 shadow-sm">
               <ChoiceChips
                 options={SERVICE_OPTIONS.map((o) => o.label)}
-                onSelect={handleServiceSelect}
+                onSelect={(value) => handleServiceSelect(Array.isArray(value) ? value[0] : value)}
               />
             </div>
           )}

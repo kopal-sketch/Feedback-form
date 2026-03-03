@@ -28,16 +28,20 @@ export default function AdminPage() {
       setLoading(false);
       return;
     }
-    supabase
-      .from("feedback")
-      .select("*")
-      .order("submitted_at", { ascending: false })
-      .then(({ data, error: err }) => {
+    (async () => {
+      try {
+        const { data, error: err } = await supabase
+          .from("feedback")
+          .select("*")
+          .order("submitted_at", { ascending: false });
         if (err) throw err;
         setFeedback((data as FeedbackRow[]) ?? []);
-      })
-      .catch((e) => setError(e.message))
-      .finally(() => setLoading(false));
+      } catch (e) {
+        setError(e instanceof Error ? e.message : "Failed to load feedback");
+      } finally {
+        setLoading(false);
+      }
+    })();
   }, []);
 
   const parseChips = (raw: string | null | undefined): string[] => {
