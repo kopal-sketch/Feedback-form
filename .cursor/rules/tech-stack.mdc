@@ -1,0 +1,13 @@
+---
+description: Project tech stack — Next.js, PostgreSQL/Supabase, Vercel, Tailwind
+alwaysApply: true
+---
+
+# Tech stack
+
+This project is a **website**. Use the stack below. Do not suggest or use alternatives unless the user explicitly asks.
+
+- **Frontend + Backend:** Next.js
+- **Database:** PostgreSQL (or Supabase)
+- **Hosting:** Vercel
+- **Styling:** Tailwind

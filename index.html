@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share your feedback — POP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="logo">POP</div>
+      <p class="tagline">Your feedback helps us get better</p>
+    </header>
+
+    <main class="main">
+      <div id="chat-container" class="chat-container"></div>
+
+      <div id="rating-row" class="input-row hidden">
+        <p class="input-label">Pick a number — 1 is rough, 5 is great</p>
+        <div id="rating-buttons" class="rating-buttons"></div>
+      </div>
+
+      <div id="choices-row" class="input-row hidden">
+        <!-- Filled by app.js -->
+      </div>
+
+      <div id="freetext-row" class="input-row hidden">
+        <textarea id="freetext-input" class="freetext-input" rows="3" placeholder="Share your thoughts..."></textarea>
+        <button type="button" id="freetext-submit" class="btn btn-primary">Continue</button>
+      </div>
+
+      <div id="submit-row" class="input-row hidden">
+        <button type="button" id="submit-btn" class="btn btn-submit">Submit feedback</button>
+      </div>
+
+      <div id="input-area" class="input-row hidden">
+        <input type="text" id="user-input" placeholder="Type here..." />
+        <button type="button" id="send-btn">Send</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="forms-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+// POP Feedback — PostgreSQL schema via Prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Feedback {
+  id                   String   @id @default(cuid())
+  overallRating        Int
+  service              String   // POPshop | POP Card | POP Bills | POP UPI
+  sentiment            String   // positive | neutral | negative
+  whatDelightedOrWrong String?  @map("what_delighted_or_wrong") // JSON array of selected chips
+  otherText            String?  @map("other_text")
+  bugsIssues           String?  @map("bugs_issues")
+  suggestions          String?
+  customQuestionAnswer String?  @map("custom_question_answer")
+  submittedAt          DateTime @default(now()) @map("submitted_at")
+
+  @@map("feedback")
+}

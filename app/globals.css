@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --pop-mint: #a8e6cf;
+  --pop-sage: #88c9a1;
+  --pop-forest: #2d5a3d;
+  --pop-cream: #fef9f0;
+  --pop-coral: #f4a574;
+  --pop-warm: #e8c4a0;
+}
+
+body {
+  @apply antialiased bg-pop-cream text-pop-forest min-h-screen;
+}
+
+/* Chat scroll */
+.chat-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Bubble animation */
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.bubble-enter {
+  animation: bubble-in 0.35s ease-out forwards;
+}
+
+/* Rating star hover */
+.rating-btn:hover .rating-num {
+  @apply bg-pop-sage text-white scale-110;
+}
+
+.rating-btn input:checked + .rating-num {
+  @apply bg-pop-forest text-white ring-2 ring-pop-sage;
+}
+
+/* Choice chips */
+.choice-chip input:checked + span {
+  @apply bg-pop-forest text-white border-pop-forest;
+}
+
+.choice-chip:hover span {
+  @apply border-pop-sage bg-pop-mint/30;
+}
